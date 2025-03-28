@@ -28,7 +28,7 @@
       max-width: 1200px;
       margin: auto;
     }
-      /* --- Header et Navigation --- */
+    /* --- Header et Navigation --- */
     header {
       background: linear-gradient(135deg, #2E2E2E, #F37021);
       color: #fff;
@@ -79,7 +79,6 @@
     nav ul li a:hover {
       color: #FFDDAA;
     }
-
     /* Menu déroulant (si vous l’utilisez) */
     li.dropdown:hover ul.dropdown-content {
       display: block;
@@ -106,7 +105,6 @@
     ul.dropdown-content li a:hover {
       background: #f1f1f1;
     }
-
     /* Menu mobile (checkbox hack) */
     #menu-toggle {
       display: none;
@@ -156,11 +154,18 @@
       background: #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-    .page-title h1 { font-size: 32px; color: #F37021; }
+    .page-title h1 { 
+      font-size: 32px; 
+      color: #F37021; 
+    }
     
-    /* Cartes des services */
+    /* --- Cartes des services --- */
     section { padding: 60px 0; }
-    .services-container { display: flex; flex-wrap: wrap; justify-content: center; }
+    .services-container { 
+      display: flex; 
+      flex-wrap: wrap; 
+      justify-content: center; 
+    }
     .service-card {
       background: #fff;
       border-radius: 10px;
@@ -172,10 +177,28 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       transition: transform 0.3s, box-shadow 0.3s;
     }
-    .service-card:hover { transform: translateY(-5px); box-shadow: 0 8px 16px rgba(0,0,0,0.15); }
-    .service-card h3 { margin-bottom: 15px; color: #2E2E2E; font-size: 20px; }
-    .service-card p { font-size: 15px; color: #555; }
+    .service-card:hover { 
+      transform: translateY(-5px); 
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15); 
+    }
+    /* Image intégrée au-dessus du titre */
+    .service-card img.service-image {
+      width: 100%;
+      height: auto;
+      border-radius: 10px 10px 0 0;
+      margin-bottom: 15px;
+    }
+    .service-card h3 { 
+      margin-bottom: 15px; 
+      color: #2E2E2E; 
+      font-size: 20px; 
+    }
+    .service-card p { 
+      font-size: 15px; 
+      color: #555; 
+    }
     
+    /* --- Footer --- */
     footer {
       background: #2E2E2E;
       color: #fff;
@@ -186,8 +209,13 @@
       align-items: center;
       flex-wrap: wrap;
     }
-    footer .footer-left, footer .footer-right { margin: 5px 20px; }
-    footer a { color: #fff; text-decoration: underline; }
+    footer .footer-left, footer .footer-right { 
+      margin: 5px 20px; 
+    }
+    footer a { 
+      color: #fff; 
+      text-decoration: underline; 
+    }
   </style>
 </head>
 <body>
@@ -197,11 +225,10 @@
     <div class="container">
       <!-- Conteneur du logo (image + texte) -->
       <div class="logo-container">
-        <!-- Remplacez "GDSlogo.png" par le vrai nom de votre fichier logo -->
+        <!-- Remplacez "GDSlogo.png" par le nom de votre fichier logo -->
         <img src="GDSlogo.png" alt="Logo Groupe Direct Services" class="logo-img">
         <span class="logo-text">Groupe Direct Services</span>
       </div>
-
       <input type="checkbox" id="menu-toggle">
       <label for="menu-toggle" class="menu-icon">&#9776;</label>
       <nav>
@@ -224,41 +251,49 @@
       </nav>
     </div>
   </header>
-
+  
   <div class="page-title">
     <h1>Nos Services</h1>
   </div>
+  
+  <!-- Section des services avec images intégrées -->
   <section>
     <div class="container services-container">
       <a href="https://www.groupedirectservices.com/courses-transports.html" target="_blank">
         <div class="service-card">
+          <img class="service-image" src="https://img.freepik.com/photos-premium/coursier-moto-scooter-assurant-livraisons-restauration-rapide_795881-14925.jpg" alt="Coursier Express">
           <h3>Coursier Express</h3>
           <p>Expédition rapide et sécurisée de vos colis avec une traçabilité optimale.</p>
         </div>
       </a>
       <a href="https://www.groupedirectservices.com/salons-evenementiels.html" target="_blank">
         <div class="service-card">
+          <img class="service-image" src="https://www.leguidedesce.fr/wp-content/uploads/2020/03/salon-professionnel-logiciel-evenementiel.jpg" alt="Salons & Événementiels">
           <h3>Salons &amp; événementiels</h3>
           <p>Organisation et logistique pour salons et événements professionnels.</p>
         </div>
       </a>
       <a href="http://directdem.fr/" target="_blank">
         <div class="service-card">
+          <img class="service-image" src="https://www.groupedirectservices.com/img/img_upload/621cf4fcc138b4.02035269.jpg" alt="Déménagement">
           <h3>Déménagement</h3>
           <p>Déménagements personnalisés pour particuliers et professionnels.</p>
         </div>
       </a>
       <a href="https://www.retail-amenagement.com/" target="_blank">
         <div class="service-card">
+          <img class="service-image" src="https://www.bureauxlocaux.com/static/front/img/generic/bl_corporate_intro.e6306245b3ec.webp" alt="Aménagement de magasins et locaux professionnels">
           <h3>Aménagement de magasins et locaux professionnels</h3>
           <p>Optimisation et réaménagement de vos espaces professionnels.</p>
         </div>
       </a>
     </div>
   </section>
+  
   <footer>
     <div class="footer-left">&copy; 2025 Groupe Direct Services. Tous droits réservés.</div>
     <div class="footer-right"><a href="mentions.html">Mentions légales</a></div>
   </footer>
 </body>
 </html>
+²
