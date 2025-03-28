@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Groupe Direct Services - Accueil</title>
+  <meta name="description" content="Accueil - Groupe Direct Services">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Réinitialisation et styles de base --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    /* --- Header et Navigation --- */
+    header {
+      background: linear-gradient(135deg, #2E2E2E, #F37021);
+      color: #fff;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    /* Conteneur du logo (image + texte) */
+    .logo-container {
+      float: left;
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    /* Image du logo */
+    .logo-img {
+      height: 50px; /* Ajustez selon vos préférences */
+      margin-right: 10px;
+    }
+    /* Texte à côté du logo */
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    /* Navigation à droite */
+    nav {
+      float: right;
+      margin-right: 20px;
+      position: relative;
+    }
+    nav ul {
+      list-style: none;
+    }
+    nav ul li {
+      display: inline-block;
+      margin-left: 20px;
+      position: relative;
+    }
+    nav ul li a {
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #FFDDAA;
+    }
+
+    /* Menu déroulant (si vous l’utilisez) */
+    li.dropdown:hover ul.dropdown-content {
+      display: block;
+    }
+    ul.dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      min-width: 180px;
+      top: 40px;
+      left: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+    ul.dropdown-content li {
+      display: block;
+      margin: 0;
+    }
+    ul.dropdown-content li a {
+      color: #333;
+      padding: 12px 16px;
+      display: block;
+    }
+    ul.dropdown-content li a:hover {
+      background: #f1f1f1;
+    }
+
+    /* Menu mobile (checkbox hack) */
+    #menu-toggle {
+      display: none;
+    }
+    .menu-icon {
+      display: none;
+      float: right;
+      font-size: 26px;
+      margin-right: 20px;
+      color: #fff;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .logo-container, nav, .menu-icon {
+        float: none;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+      }
+      nav ul {
+        display: none;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+      }
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+      ul.dropdown-content {
+        position: static;
+        box-shadow: none;
+        min-width: 100%;
+      }
+      .menu-icon {
+        display: block;
+      }
+      #menu-toggle:checked + .menu-icon + nav ul {
+        display: block;
+      }
+    }
+
+    /* --- Section Hero --- */
+    .hero {
+      margin-top: 80px; /* Espace pour le header fixe */
+      height: 100vh;
+      background: url('https://www.groupedirectservices.com/img/img_upload/621cec8e14d093.35469857.jpg') no-repeat center center/cover;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(46,46,46,0.5);
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 800px;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 48px;
+      margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px;
+      margin-bottom: 30px;
+    }
+    .btn {
+      display: inline-block;
+      background: #F37021;
+      color: #fff;
+      padding: 12px 30px;
+      border-radius: 50px;
+      transition: background 0.3s;
+    }
+    .btn:hover {
+      background: #cf5f1b;
+    }
+
+    /* --- Pied de page --- */
+    footer {
+      background: #2E2E2E;
+      color: #fff;
+      padding: 20px 0;
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    footer .footer-left,
+    footer .footer-right {
+      margin: 5px 20px;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- En-tête -->
+  <header>
+    <div class="container">
+      <!-- Conteneur du logo (image + texte) -->
+      <div class="logo-container">
+        <!-- Remplacez "GDSlogo.png" par le vrai nom de votre fichier logo -->
+        <img src="GDSlogo.png" alt="Logo Groupe Direct Services" class="logo-img">
+        <span class="logo-text">Groupe Direct Services</span>
+      </div>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li class="dropdown">
+            <a href="services.html">Nos Services</a>
+            <input type="checkbox" id="dropdown-toggle" hidden>
+            <label for="dropdown-toggle" class="dropdown-icon">&#9660;</label>
+            <ul class="dropdown-content">
+              <li><a href="https://www.groupedirectservices.com/courses-transports.html" target="_blank">Coursier express</a></li>
+              <li><a href="https://www.groupedirectservices.com/salons-evenementiels.html" target="_blank">Salons &amp; événementiels</a></li>
+              <li><a href="http://directdem.fr/" target="_blank">Déménagement</a></li>
+              <li><a href="https://www.retail-amenagement.com/" target="_blank">Aménagement de magasins et locaux professionnels</a></li>
+            </ul>
+          </li>
+          <li><a href="clients.html">Retours Clients</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+
+  <!-- Section Hero -->
+  <section class="hero">
+    <div class="hero-content container">
+      <h1>Bienvenue chez Groupe Direct Services</h1>
+      <p>Transport express, déménagement, logistique événementielle et plus encore...</p>
+      <a href="contact.html" class="btn">Demander un devis</a>
+    </div>
+  </section>
+
+  <!-- Exemple de contenu -->
+  <section>
+    <div class="container">
+      <h2 style="text-align:center; margin-bottom:30px; color:#F37021;">Qui sommes-nous ?</h2>
+      <p style="max-width:800px; margin:auto; text-align:center;">
+        Groupe Direct Services est une société spécialisée dans le transport express de colis,  
+        le déménagement, l’aménagement de magasins et locaux professionnels, et la logistique  
+        événementielle pour salons et événements. Depuis 2008, nous mettons tout en œuvre  
+        pour offrir des solutions rapides et fiables, adaptées aux besoins de nos clients.
+      </p>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="footer-left">&copy; 2025 Groupe Direct Services. Tous droits réservés.</div>
+    <div class="footer-right"><a href="mentions.html">Mentions légales</a></div>
+  </footer>
+</body>
+</html>

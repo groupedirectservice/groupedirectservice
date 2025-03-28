@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Groupe Direct Services - Retours Clients</title>
+  <meta name="description" content="Retours Clients - Groupe Direct Services">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* --- Réinitialisation et styles de base --- */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      background: #f9f9f9;
+      color: #333;
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+  /* --- Header et Navigation --- */
+    header {
+      background: linear-gradient(135deg, #2E2E2E, #F37021);
+      color: #fff;
+      padding: 20px 0;
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 100;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    }
+    /* Conteneur du logo (image + texte) */
+    .logo-container {
+      float: left;
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    /* Image du logo */
+    .logo-img {
+      height: 50px; /* Ajustez selon vos préférences */
+      margin-right: 10px;
+    }
+    /* Texte à côté du logo */
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    /* Navigation à droite */
+    nav {
+      float: right;
+      margin-right: 20px;
+      position: relative;
+    }
+    nav ul {
+      list-style: none;
+    }
+    nav ul li {
+      display: inline-block;
+      margin-left: 20px;
+      position: relative;
+    }
+    nav ul li a {
+      color: #fff;
+      font-size: 16px;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #FFDDAA;
+    }
+
+    /* Menu déroulant (si vous l’utilisez) */
+    li.dropdown:hover ul.dropdown-content {
+      display: block;
+    }
+    ul.dropdown-content {
+      display: none;
+      position: absolute;
+      background: #fff;
+      min-width: 180px;
+      top: 40px;
+      left: 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      z-index: 999;
+    }
+    ul.dropdown-content li {
+      display: block;
+      margin: 0;
+    }
+    ul.dropdown-content li a {
+      color: #333;
+      padding: 12px 16px;
+      display: block;
+    }
+    ul.dropdown-content li a:hover {
+      background: #f1f1f1;
+    }
+
+    /* Menu mobile (checkbox hack) */
+    #menu-toggle {
+      display: none;
+    }
+    .menu-icon {
+      display: none;
+      float: right;
+      font-size: 26px;
+      margin-right: 20px;
+      color: #fff;
+      cursor: pointer;
+    }
+    @media (max-width: 768px) {
+      .logo-container, nav, .menu-icon {
+        float: none;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+      }
+      nav ul {
+        display: none;
+        width: 100%;
+        text-align: center;
+        margin-top: 20px;
+      }
+      nav ul li {
+        display: block;
+        margin: 10px 0;
+      }
+      ul.dropdown-content {
+        position: static;
+        box-shadow: none;
+        min-width: 100%;
+      }
+      .menu-icon {
+        display: block;
+      }
+      #menu-toggle:checked + .menu-icon + nav ul {
+        display: block;
+      }
+    }
+    
+    .page-title {
+      margin-top: 80px;
+      padding: 40px 0;
+      text-align: center;
+      background: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .page-title h1 { font-size: 32px; color: #F37021; }
+
+        /* --- Titre page --- */
+    .page-title {
+      margin-top: 80px;
+      padding: 40px 0;
+      text-align: center;
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .page-title h1 {
+      font-size: 32px;
+      color: #F37021;
+    }
+
+    /* ... */
+    .testimonials {
+      display: flex; flex-wrap: wrap; justify-content: center;
+    }
+    .testimonial {
+      background-color: #fff;
+      border-radius: 10px;
+      margin: 15px;
+      padding: 30px;
+      flex: 1 1 300px;
+      max-width: 320px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      font-style: italic;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .testimonial:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+    }
+    .testimonial p {
+      margin-bottom: 10px;
+      color: #555;
+    }
+    .testimonial strong {
+      display: block;
+      margin-top: 15px;
+      text-align: right;
+      color: #333;
+      font-style: normal;
+    }
+        /* --- FOOTER --- */
+    footer {
+      background-color: #2E2E2E;
+      color: #fff;
+      padding: 20px 0;
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    footer .footer-left,
+    footer .footer-right {
+      margin: 5px 20px;
+    }
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+ <!-- En-tête -->
+  <header>
+    <div class="container">
+      <!-- Conteneur du logo (image + texte) -->
+      <div class="logo-container">
+        <!-- Remplacez "GDSlogo.png" par le vrai nom de votre fichier logo -->
+        <img src="GDSlogo.png" alt="Logo Groupe Direct Services" class="logo-img">
+        <span class="logo-text">Groupe Direct Services</span>
+      </div>
+      <input type="checkbox" id="menu-toggle">
+      <label for="menu-toggle" class="menu-icon">&#9776;</label>
+      <nav>
+        <ul>
+          <li><a href="index.html">Accueil</a></li>
+          <li class="dropdown">
+            <a href="services.html">Nos Services</a>
+            <input type="checkbox" id="dropdown-toggle" hidden>
+            <label for="dropdown-toggle" class="dropdown-icon">&#9660;</label>
+            <ul class="dropdown-content">
+              <li><a href="https://www.groupedirectservices.com/courses-transports.html" target="_blank">Coursier express</a></li>
+              <li><a href="https://www.groupedirectservices.com/salons-evenementiels.html" target="_blank">Salons &amp; événementiels</a></li>
+              <li><a href="http://directdem.fr/" target="_blank">Déménagement</a></li>
+              <li><a href="https://www.retail-amenagement.com/" target="_blank">Aménagement de magasins et locaux professionnels</a></li>
+            </ul>
+          </li>
+          <li><a href="clients.html">Retours Clients</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Titre page -->
+  <div class="page-title">
+    <h1>Retours Clients</h1>
+  </div>
+
+  <!-- Section Témoignages -->
+  <section>
+    <div class="container">
+      <div class="testimonials">
+        <div class="testimonial">
+          <p>★★★★★ <br> "Personnel très compétent et appliqué , soucieux de satisfaire le client , tarif raisonnable  je ne peux que recommander cette entreprise.
+          Bravo à votre équipe"</p>
+          <strong>- PH BALT</strong>
+        </div>
+        <div class="testimonial">
+          <p>★★★★★ <br> "Tellement satisfait d’avoir un partenaire aussi sérieux depuis des années après avoir galéré avec de nombreuses autres sociétés de course qui ne leur arrivent pas à la cheville !
+Écoute, sérieux et ponctualité
+Merci à toute leur équipe"</p>
+          <strong>- Valèry delepierre</strong>
+        </div>
+        <div class="testimonial">
+          <p>★★★★★ <br> "Service impeccable et un accompagnement professionnel du début à la fin."</p>
+          <strong>- Adam Braik</strong>
+        </div>
+        <div class="testimonial">
+          <p>★★★★★ <br> "excellente relation avec le clients une communication rapide et un travail bien fait avec un tarifs raisonnable"</p>
+          <strong>- </strong>
+        </div>
+        <div class="testimonial">
+          <p>★★★★★ <br> "Bon transporteur aimable et ponctuel."</p>
+          <strong>- Elhanafi Belhadj</strong>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <footer>
+    <div class="footer-left" style="margin-left:20px;">
+      &copy; 2025 Groupe Direct Services. Tous droits réservés.
+    </div>
+    <div class="footer-right" style="margin-right:20px;">
+      <a href="mentions.html">Mentions légales</a>
+    </div>
+  </footer>
+</body>
+</html>
